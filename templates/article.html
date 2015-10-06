@@ -77,7 +77,7 @@
                     {{ article.content }}
                 </div>
                 <footer class="text-right">
-                    <p>- {{article.author}}</p>
+                    <p>by <a href="mailto:{{ EMAIL }}">{{ article.author }}</a></p>
                 </footer>
                 {% include 'include/comments.html' %}
             </div>
