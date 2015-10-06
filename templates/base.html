@@ -296,6 +296,25 @@
                     {% endfor %}
                 </ul></li>
                 {% endif %}
+
+                {% if DISPLAY_SPECIAL_PAGES_ON_MENU %}
+                    {% if LINKS %}
+                    <li class="nav-divider"></li>
+                    <li>
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-specialpages">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            Links
+                        </a>
+                    </li>
+                    <li class="panel anti-panel"><ul id="collapse-specialpages" class="sidebar_submenu collapse {% block collapse_specialpages %}{% endblock %}">
+                        {% for name, link in LINKS %}
+                            <li><a href="{{ link }}">{{ name }}</a></li>
+                        {% endfor %}
+                        </ul>
+                    </li>
+                    {% endif %}
+                {% endif %}
+
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
